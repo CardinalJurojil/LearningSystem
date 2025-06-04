@@ -1,0 +1,251 @@
+:root {
+    --color-gold-light: #cba135;  /* a warm, muted gold */
+    --color-gold-dark: #7a5b15;   /* deeper gold/brown */
+    --color-black: #121212;
+    --color-charcoal: #222222;
+    --color-gray-light: #f2f2f2;
+    --color-gray-muted: #777777;
+    --font-primary: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --transition-default: 0.3s ease-in-out;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+    color: #ddd;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+header {
+    background: linear-gradient(90deg, var(--color-gold-dark), var(--color-gold-light));
+    color: var(--color-black);
+    padding: 2rem 1.5rem;
+    text-align: center;
+    border-bottom-left-radius: 16px;
+    border-bottom-right-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+    letter-spacing: 0.6px;
+    font-weight: 700;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.4rem;
+    font-weight: 700;
+    text-shadow: none;
+    color: #3e2e00; /* dark gold-brown for subtle contrast */
+}
+
+nav {
+    margin-top: 1rem;
+}
+
+nav a {
+    color: var(--color-gold-light);
+    text-decoration: none;
+    margin: 0 1.25rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.4px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid transparent;
+    transition: color var(--transition-default), border-color var(--transition-default);
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--color-gold-light);
+    transition: width 0.3s ease, left 0.3s ease;
+    border-radius: 1px;
+}
+
+nav a:hover::after,
+nav a:focus-visible::after {
+    width: 100%;
+    left: 0;
+}
+
+nav a:hover,
+nav a:focus-visible {
+    color: #fff;
+    border-color: transparent;
+    outline: none;
+}
+
+main {
+    padding: 3rem 2rem;
+    max-width: 90rem;
+    margin: 3rem auto 6rem;
+    background: #1e1e1e;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    border: 1px solid #5e4b1a; /* subtle gold border */
+}
+
+h2 {
+    color: var(--color-gold-light);
+    margin-bottom: 2rem;
+    font-size: 2.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.8px;
+    font-family: 'Cormorant Garamond', serif;
+    text-shadow: none;
+}
+
+.blue {
+    border-left: 5px solid var(--color-gold-light);
+    padding-left: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+ul#student-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul#student-list li {
+    background: linear-gradient(145deg, #2a2a2a, #212121);
+    padding: 1.5rem 1.75rem;
+    margin-bottom: 1.25rem;
+    border-radius: 14px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+    transition: transform var(--transition-default), box-shadow var(--transition-default);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid transparent;
+    position: relative;
+}
+
+ul#student-list li:hover,
+ul#student-list li:focus-within {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.7);
+    border-color: var(--color-gold-dark);
+    z-index: 1;
+}
+
+ul#student-list li a {
+    color: #eee;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    letter-spacing: 0.3px;
+    transition: color var(--transition-default);
+    position: relative;
+    z-index: 1;
+}
+
+ul#student-list li a:hover,
+ul#student-list li a:focus-visible {
+    color: var(--color-gold-light);
+    text-decoration: underline;
+    outline-offset: 2px;
+    outline: 2px solid var(--color-gold-light);
+}
+
+.student-email {
+    font-size: 1rem;
+    color: var(--color-gray-muted);
+    margin-top: 0.2rem;
+    font-style: italic;
+    max-width: 240px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+ul#student-list li button {
+    background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold-light));
+    color: var(--color-black);
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: none;
+    transition: background-color var(--transition-default), transform var(--transition-default);
+    user-select: none;
+}
+
+ul#student-list li button:hover,
+ul#student-list li button:focus-visible {
+    background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold-dark));
+    transform: scale(1.05);
+    outline: none;
+}
+
+ul#student-list li .student-actions a {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-gold-light);
+}
+
+ul#student-list li .student-actions a:not(:last-child) {
+    margin-right: 10px;
+}
+
+.add-student-wrapper {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: flex-end; 
+}
+
+.add-student-link {
+    background: linear-gradient(135deg, var(--color-gold-light), var(--color-gold-dark));
+    color: var(--color-black);
+    padding: 0.85rem 2rem;
+    border-radius: 14px;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: none;
+    transition: background-color var(--transition-default), transform var(--transition-default);
+    user-select: none;
+    align-self: flex-start;
+}
+
+.add-student-link:hover,
+.add-student-link:focus-visible {
+    background: linear-gradient(135deg, var(--color-gold-dark), var(--color-gold-light));
+    transform: scale(1.05);
+    outline: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    ul#student-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 1.25rem;
+    }
+
+    ul#student-list li button {
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+
+    nav a {
+        margin: 0 0.75rem;
+        font-size: 1rem;
+    }
+}

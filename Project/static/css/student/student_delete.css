@@ -1,0 +1,127 @@
+/* Modal Backdrop with Soft Blur & Dim */
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0; */
+    z-index: 9999;
+    background: rgba(15, 15, 15, 0.65);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Frosted Glass Modal Container */
+.modal-content {
+    background: rgba(255 255 255 / 0.85);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    margin: 7% auto;
+    padding: 2.5rem 3rem;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 480px;
+    box-shadow:
+        0 24px 48px rgb(0 0 0 / 0.2),
+        inset 0 0 40px rgb(255 255 255 / 0.2);
+    text-align: center;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+}
+
+/* Animate modal content on open */
+.modal.show .modal-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Title */
+.modal-content h3 {
+    color: #bf1e2e;
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: 0.06em;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Description Text */
+.modal-content p {
+    margin-bottom: 1.75rem;
+    color: #444;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: 500;
+    user-select: none;
+}
+
+/* Checkbox */
+#confirm-checkbox {
+    margin: 14px 0;
+    cursor: pointer;
+}
+
+.modal-content label {
+    font-size: 1rem;
+    color: #222;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Buttons Group */
+.modal-content .button-group {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* General Buttons */
+.modal-content button {
+    padding: 0.65rem 2.25rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1.05rem;
+    transition: background-color 0.3s ease, transform 0.25s ease, box-shadow 0.3s ease;
+    box-shadow: 0 6px 10px rgb(0 0 0 / 0.1);
+    user-select: none;
+    min-width: 120px;
+}
+
+/* Confirm Delete */
+#confirm-delete-btn {
+    background: linear-gradient(135deg, #bf1e2e 0%, #8b121f 100%);
+    color: #fff;
+    box-shadow: 0 6px 15px rgb(191 30 46 / 0.45);
+}
+
+#confirm-delete-btn:hover:enabled {
+    background: linear-gradient(135deg, #8b121f 0%, #5c0a13 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgb(140 18 21 / 0.6);
+}
+
+#confirm-delete-btn:disabled {
+    background-color: #e5b5b5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Cancel Button */
+#cancel-btn {
+    background: linear-gradient(135deg, #666666 0%, #444444 100%);
+    color: #f1f1f1;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+}
+
+#cancel-btn:hover {
+    background: linear-gradient(135deg, #4a4a4a 0%, #2d2d2d 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgb(0 0 0 / 0.3);
+}

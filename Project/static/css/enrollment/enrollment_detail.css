@@ -1,0 +1,122 @@
+/* Layout & container */
+main {
+  padding: 24px 28px;
+  font-family: 'Inter', sans-serif;
+  background-color: #f7f9fb;
+  min-height: 100vh;
+}
+
+/* Enrollment Info with Glassmorphism Blur */
+#enrollment-info {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 28px 32px;
+  margin-bottom: 28px;
+  border-radius: 16px;
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.12),
+    inset 0 0 48px rgba(255, 255, 255, 0.4);
+  border: 1.5px solid rgba(210, 210, 210, 0.6);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #1c1c1e;
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  user-select: none;
+}
+
+#enrollment-info p {
+  margin: 8px 0;
+  font-size: 1.1rem;
+  letter-spacing: 0.3px;
+  color: #34495e;
+}
+
+/* Back button */
+#back-btn {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.25rem;
+  margin-right: 14px;
+  color: #16a085;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 600;
+  background: rgba(22, 160, 133, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(22, 160, 133, 0.2);
+  user-select: none;
+}
+
+#back-btn:hover {
+  background-color: #16a085;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(22, 160, 133, 0.45);
+}
+
+/* Action buttons container */
+.enrollment-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+/* General action button style */
+.enrollment-actions .action-btn {
+  padding: 12px 24px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(211, 47, 47, 0.3);
+  transition: background-color 0.35s ease, box-shadow 0.35s ease, transform 0.15s ease;
+  user-select: none;
+  min-width: 140px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* Delete / Danger button */
+.enrollment-actions .action-btn {
+  background-image: linear-gradient(135deg, #d32f2f, #b71c1c);
+}
+
+.enrollment-actions .action-btn:hover {
+  background-image: linear-gradient(135deg, #b71c1c, #8b1010);
+  box-shadow: 0 10px 28px rgba(183, 28, 28, 0.65);
+  transform: translateY(-2px);
+}
+
+/* View Profile button */
+.action-btn.view-profile {
+  background-image: linear-gradient(135deg, #1976d2, #0d47a1);
+  box-shadow: 0 6px 18px rgba(25, 118, 210, 0.4);
+  color: #eaf6ff;
+}
+
+.action-btn.view-profile:hover {
+  background-image: linear-gradient(135deg, #0d47a1, #08306b);
+  box-shadow: 0 10px 28px rgba(13, 71, 161, 0.75);
+  transform: translateY(-2px);
+  color: #cce6ff;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+  .enrollment-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .enrollment-actions .action-btn {
+    width: 100%;
+    text-align: center;
+    min-width: auto;
+  }
+}

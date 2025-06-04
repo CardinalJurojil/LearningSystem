@@ -1,0 +1,88 @@
+/* Container holding the create button */
+.subject-header {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+/* Subject list base */
+#subject-list {
+    list-style: none;
+    padding: 0;
+    margin: 0; /* add to avoid default ul margin */
+}
+
+/* Individual subject item */
+#subject-list li {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-left-color 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    outline-offset: 2px;
+}
+
+/* Hover and focus for accessibility */
+#subject-list li:hover,
+#subject-list li:focus-visible {
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-left: 6px solid #0057a3;
+    outline: none;
+}
+
+/* Subject title */
+.subject-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #0057a3;
+}
+
+/* Subject code */
+.subject-code {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* Create button styling */
+#create-subject-btn {
+    background-color: #0057a3;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+}
+
+#create-subject-btn:hover,
+#create-subject-btn:focus-visible {
+    background-color: #003f7d;
+    outline: none;
+}
+
+/* Responsive layout for small screens */
+@media (max-width: 600px) {
+    #subject-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .subject-header {
+        justify-content: center;
+    }
+}
+
+/* Override pointer cursor on subject action links */
+.subject-actions a {
+    cursor: default;
+    text-decoration: none;
+    color: inherit;
+}
